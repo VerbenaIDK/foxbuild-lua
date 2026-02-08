@@ -1,0 +1,11 @@
+#!/bin/sh
+source ./project.env
+source ./build.env
+
+if $1 != "debug"; then
+    ./'build-c.sh'
+    ./$BUILD_DIR/$PROJECT_NAME-test.elf
+else
+    ./'build-c.sh'
+    $DEBUGGER $BUILD_DIR/$PROJECT_NAME-test.elf
+fi
