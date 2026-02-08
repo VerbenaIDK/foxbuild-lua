@@ -2,6 +2,29 @@ local messages = require("components.Messages")
 
 local Module = {}
 
+local function switch(case, option)
+    local action = option[case] or option["default"]
+    if action then
+        return action()
+    end
+end
+
+
+-- usage would be something like this:
+-- say the thing we are looking for is a function with the number label 2
+-- we'd just put number 2 in the case part of the function, if It finds it, It can do another thing (like execute another function) like so
+--
+-- switch(2, {
+-- [1] = function() print("Case 1 executed!!!!!!") end,
+-- [2] = function() print("case 2 was executed!!!") end,
+-- ["default"] = function() os.exit(0)end,
+-- })
+--
+--This should be fairly expandable and very useful
+--
+--
+
+
 function Module.check_Options(arguments, projects_name, projects_count)
     local first_arg
     local second_arg

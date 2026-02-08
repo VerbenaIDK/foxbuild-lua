@@ -31,7 +31,7 @@ function Module.Get_Project_Options(project_Name)
         if arg[1] ~= "all" then
             print("Todo")
         else
-            local build-env = string.format("%s%s", arg[1], "build.env")
+            local build_env = string.format("%s%s", arg[1], "build.env")
 
         end
     else
