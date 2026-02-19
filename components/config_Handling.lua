@@ -31,7 +31,15 @@ function Module.Get_Project_Options(project_Name)
         if arg[1] ~= "all" then
             print("Todo")
         else
-            local build_env = string.format("%s%s", arg[1], "build.env")
+            local project_config_env_path = string.format("%s/%s", arg[1], "project.env")
+
+            dotenv.load_dotenv(project_config_env_path)
+
+            local language = dotenv.get("LANGUAGE", false)
+
+            if language == false then
+		
+            end
 
         end
     else

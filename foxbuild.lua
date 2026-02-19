@@ -26,12 +26,8 @@ elseif misc.File_Exists("project.env") then
     Is_Multiproject = false
 end
 
-if arg[1] == "--debug" then
-    Debug = true
-    messages.debug_Status("Debug mode is enabled.")
-else
-    Debug = false
-end
+Debug = false
+
 Project_Config_Defaults = config.Get_Project_Defaults()
 Project_Names = getprojects.get_Projects()
 Project_Count = #Project_Names
